@@ -40,12 +40,17 @@ app.post('/encender-luz', function (req, res, next) {
     return res.status(200).end();
   }
 
-  fetch('https://maker.ifttt.com/triggr/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i')
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(myJson) {
-      console.log(myJson);
-    });
+
+  app.get('https://maker.ifttt.com/triggr/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i', function (req, res) {
+
+     console.log(123); });
+
+  // fetch('https://maker.ifttt.com/triggr/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i')
+  //   .then(function(response) {
+  //     return response.json();
+  //   })
+  //   .then(function(myJson) {
+  //     console.log(myJson);
+  //   });
 
 });
