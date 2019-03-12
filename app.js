@@ -25,7 +25,9 @@ app.post('/hello', function (req, res, next) {
   } else {
     return res.status(200).end();
   }
-    open ("https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i")
+  $http.get('https://maker.ifttt.com/trigger/apagarFoco/with/key/d2gEXI2jzz6CNGYc66_W8i').
+          success(function(data) {
+              });
 });
 
 app.post('/encender-luz', function (req, res, next) {
@@ -39,5 +41,7 @@ app.post('/encender-luz', function (req, res, next) {
   } else {
     return res.status(200).end();
   }
-    open ("https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i")
+  $http.get('https://maker.ifttt.com/trigger/apagarFoco/with/key/d2gEXI2jzz6CNGYc66_W8i').
+          success(function(data) {
+              });
 });
