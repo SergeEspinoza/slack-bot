@@ -18,7 +18,6 @@ app.post('/hello', function (req, res, next) {
   var userName = req.body.user_name;
   var botPayload = {
     text : 'Hello ' + userName + ', welcome to IWA Slack channel! I\'ll be your guide.'
-    open ("https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i")
   };
   // Loop otherwise..
   if (userName !== 'slackbot') {
@@ -26,13 +25,13 @@ app.post('/hello', function (req, res, next) {
   } else {
     return res.status(200).end();
   }
+    open ("https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i")
 });
 
 app.post('/encender-luz', function (req, res, next) {
   var userName = req.body.user_name;
   var botPayload = {
     text : 'Hello ' + userName + ', luces encendidas.'
-    open ("https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i")
   };
   // Loop otherwise..
   if (userName !== 'slackbot') {
@@ -40,4 +39,5 @@ app.post('/encender-luz', function (req, res, next) {
   } else {
     return res.status(200).end();
   }
+    open ("https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i")
 });
