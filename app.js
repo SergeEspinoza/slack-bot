@@ -15,7 +15,7 @@ app.listen(port, function () {
   console.log('Listening on port ' + port);
 });
 
-/*
+
 app.post('/encender-luz', function (req, res, next) {
   fetch("https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i", {mode: 'no-cors'})
 .then(function(response) {
@@ -54,41 +54,4 @@ app.post('/apagar-luz', function (req, res, next) {
   console.log('Request failed', error)
 });
 
-});*/
-
-app.post('/', function (req, res, next) {
-  var userName = req.body.user_name;
-  let payload=req.body;
-  var botPayload = {
-    text : 'Hello ' + userName + ', welcome to Devdactic Slack channel! I\'ll be your guide.'
-  };
-
-  if (payload.event.text === "botluz") {
-      if (payload.event.text.includes("encender-luz")) {
-          // Make call to chat.postMessage using bot's token
-          fetch("https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i", {mode: 'no-cors'})
-        .then(function(response) {
-          console.log('Request successful',response);
-        }).catch(function(error) {
-          console.log('Request failed', error)
-        });
-      }
-      if (payload.event.text.includes("apagar-luz")) {
-          // Make call to chat.postMessage using bot's token
-          fetch("https://maker.ifttt.com/trigger/apagarFoco/with/key/d2gEXI2jzz6CNGYc66_W8i", {mode: 'no-cors'})
-        .then(function(response) {
-          console.log('Request successful',response);
-        }).catch(function(error) {
-          console.log('Request failed', error)
-        });
-      }
-
-  }
-
-  // Loop otherwise..
-  if (userName !== 'slackbot') {
-    return res.status(200).json(botPayload);
-  } else {
-    return res.status(200).end();
-  }
 });
