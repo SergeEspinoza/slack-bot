@@ -41,9 +41,9 @@ app.post('/encender-luz', function (req, res, next) {
   }
 
 
-  app.get('https://maker.ifttt.com/triggr/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i', function (req, res) {
+  //app.get('https://maker.ifttt.com/triggr/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i', function (req, res) {
 
-     console.log(123); });
+    // console.log(123); });
 
   // fetch('https://maker.ifttt.com/triggr/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i')
   //   .then(function(response) {
