@@ -21,7 +21,7 @@ app.post('/hello', function (req, res, next) {
   };
   // Loop otherwise..
   if (userName !== 'slackbot') {
-  //  $http.get('https://maker.ifttt.com/triggr/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i');
+  //  $http.get();
     return res.status(200).json(botPayload);
   } else {
     return res.status(200).end();
@@ -40,9 +40,12 @@ app.post('/encender-luz', function (req, res, next) {
     return res.status(200).end();
   }
 
-  var request = new XMLHttpRequest();
-
-  // Open a new connection, using the GET request on the URL endpoint
-  request.open('GET', 'https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i', true);
+  fetch('https://maker.ifttt.com/triggr/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i')
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(myJson) {
+      console.log(myJson);
+    });
 
 });
