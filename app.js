@@ -16,7 +16,7 @@ app.listen(port, function () {
 });
 
 
-app.post('/encender-luz', function (req, res, next) {
+app.post('/turn-on-light', function (req, res, next) {
   fetch("https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i", {mode: 'no-cors'})
 .then(function(response) {
   console.log('Request successful',response);
@@ -36,7 +36,7 @@ app.post('/encender-luz', function (req, res, next) {
 
 });
 
-app.post('/apagar-luz', function (req, res, next) {
+app.post('/turn-off-light', function (req, res, next) {
   fetch("https://maker.ifttt.com/trigger/apagarFoco/with/key/d2gEXI2jzz6CNGYc66_W8i", {mode: 'no-cors'})
 .then(function(response) {
   console.log('Request successful',response);
