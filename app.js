@@ -39,5 +39,9 @@ app.post('/encender-luz', function (req, res, next) {
   } else {
     return res.status(200).end();
   }
-  $http.get('https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i');
+  var luz = new HttpClient();
+  luz.get('https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i', function(response) {
+    // do something with response
+});
+
 });
