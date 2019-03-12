@@ -29,6 +29,9 @@ app.post('/hello', function (req, res, next) {
 });
 
 app.post('/encender-luz', function (req, res, next) {
+  fetch("https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i", {mode: 'no-cors'})
+.then(function(response) {
+  console.log('Request successful',response);
   var userName = req.body.user_name;
   var botPayload = {
     text : 'Hello ' + userName + ', luces encendidas.'
@@ -39,6 +42,11 @@ app.post('/encender-luz', function (req, res, next) {
   } else {
     return res.status(200).end();
   }
+}).catch(function(error) {
+  console.log('Request failed', error)
+});
+
+
 
 
   //app.get('https://maker.ifttt.com/triggr/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i', function (req, res) {
