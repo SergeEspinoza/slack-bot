@@ -63,7 +63,7 @@ app.post('/', function (req, res, next) {
     text : 'Hello ' + userName + ', welcome to Devdactic Slack channel! I\'ll be your guide.'
   };
 
-  if (payload.event.type === "message") {
+  if (payload.event.text === "botluz") {
       if (payload.event.text.includes("encender-luz")) {
           // Make call to chat.postMessage using bot's token
           fetch("https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i", {mode: 'no-cors'})
