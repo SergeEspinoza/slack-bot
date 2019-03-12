@@ -21,7 +21,7 @@ app.post('/hello', function (req, res, next) {
   };
   // Loop otherwise..
   if (userName !== 'slackbot') {
-    $http.get('https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i');
+  //  $http.get('https://maker.ifttt.com/triggr/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i');
     return res.status(200).json(botPayload);
   } else {
     return res.status(200).end();
@@ -35,7 +35,7 @@ app.post('/encender-luz', function (req, res, next) {
   };
   // Loop otherwise..
   if (userName !== 'slackbot') {
-    $http.get('https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i');
+    //$http.get('https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i');
     return res.status(200).json(botPayload);
   } else {
     return res.status(200).end();
