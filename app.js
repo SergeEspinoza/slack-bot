@@ -52,7 +52,7 @@ luz=true;
 }).catch(function(error) {
   console.log('Request failed', error)
 });
-luz=true;
+luz=false;
 }
 
 
