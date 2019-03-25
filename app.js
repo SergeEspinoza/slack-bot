@@ -23,7 +23,7 @@ if (!luz) {
   console.log('Request successful',response);
   var userName = req.body.user_name;
   var botPayload = {
-    text : 'MEETING time , keep volume-down please! :calla: '
+    text : 'MEETING time , keep volume-down please!'
   };
   // Loop otherwise..
   if (userName !== 'slackbot') {
