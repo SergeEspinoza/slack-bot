@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 var express = require('express');
 var bodyParser = require('body-parser');
-var luz=false;
+var luz=true;
 
 var app = express();
 var port = process.env.PORT || 1337;
@@ -17,13 +17,13 @@ app.listen(port, function () {
 });
 
 app.post('/meeting', function (req, res, next) {
-if (luz == false) {
+if (luz) {
   fetch("https://maker.ifttt.com/trigger/prender_rojo/with/key/d2gEXI2jzz6CNGYc66_W8i", {mode: 'no-cors'})
 .then(function(response) {
   console.log('Request successful',response);
   var userName = req.body.user_name;
   var botPayload = {
-    text : 'MEETING time , keep volume-down please!'
+    text : 'Hello '+ userName +' MEETING time , keep volume-down please!'
   };
   // Loop otherwise..
   if (userName !== 'slackbot') {
@@ -43,14 +43,14 @@ console.log('Request successful',response);
 console.log('Request failed', error)
 });
 
-luz=true;
+luz=false;
 } else {
   fetch("https://maker.ifttt.com/trigger/apagarFoco/with/key/d2gEXI2jzz6CNGYc66_W8i", {mode: 'no-cors'})
 .then(function(response) {
   console.log('Request successful',response);
   var userName = req.body.user_name;
   var botPayload = {
-    text : 'Meeting time ends! thanks to everyone'
+    text : 'Hello '+ userName +'Meeting time ends! thanks to everyone'
   };
   // Loop otherwise..
   if (userName !== 'slackbot') {
@@ -69,7 +69,7 @@ console.log('Request successful',response);
 console.log('Request failed', error)
 });
 
-luz=false;
+luz=true;
 }
 
 
