@@ -18,12 +18,12 @@ app.listen(port, function () {
 
 app.post('/meeting', function (req, res, next) {
 if (!luz) {
-  fetch("https://maker.ifttt.com/trigger/encenderFoco/with/key/d2gEXI2jzz6CNGYc66_W8i", {mode: 'no-cors'})
+  fetch("https://maker.ifttt.com/trigger/prender_rojo/with/key/d2gEXI2jzz6CNGYc66_W8i", {mode: 'no-cors'})
 .then(function(response) {
   console.log('Request successful',response);
   var userName = req.body.user_name;
   var botPayload = {
-    text : 'Hello ' + userName + ', light on.'
+    text : 'MEETING time , keep volume-down please! :calla: '
   };
   // Loop otherwise..
   if (userName !== 'slackbot') {
@@ -50,7 +50,7 @@ luz=true;
   console.log('Request successful',response);
   var userName = req.body.user_name;
   var botPayload = {
-    text : 'Hello ' + userName + ', light off.'
+    text : 'meeting time ends! thanks to everyone.'
   };
   // Loop otherwise..
   if (userName !== 'slackbot') {
