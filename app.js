@@ -17,7 +17,7 @@ app.listen(port, function () {
 });
 
 app.post('/meeting', function (req, res, next) {
-if (!luz) {
+if (luz == false) {
   fetch("https://maker.ifttt.com/trigger/prender_rojo/with/key/d2gEXI2jzz6CNGYc66_W8i", {mode: 'no-cors'})
 .then(function(response) {
   console.log('Request successful',response);
